@@ -1,0 +1,27 @@
+size()
+length
+help
+ones
+zeroes
+rand
+sqrt
+A = [1 2;3 4;5 6;]
+A = 1 : 10
+A = rand(10,6) = 10 row, 6 columns
+load featuresX.dat
+load ('priceY.dat')
+whos
+who
+clear
+save file.name variable -ascii
+A(3,2) % single element
+A(2,:) get second row
+A(:,[2 4]) get second and 4th column
+A(:, 2) = [10;11;12] set second column
+A = [A, [10;11;12]] add new column with three rows
+A(:) get vector of all values
+C = [A B] concatenate, left right
+C = [A; B] concatenate, top bottom
+
+A*C = matrix mult
+A .* B = multiply each element
