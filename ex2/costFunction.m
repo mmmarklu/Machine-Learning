@@ -19,13 +19,25 @@ grad = zeros(size(theta));
 %
 % Note: grad should have the same dimensions as theta
 %
+summation = 0;
+for i = 1:m;
+	otx = sum(theta' .* X(i,:));
+	hx = 1 / (1 + (e^-otx));
+	loopsum = (-y(i) * log (hx)) - ((1-y(i)) * log((1-hx)));
+	summation = summation + loopsum;
+end;
+J = summation / m;
 
-
-
-
-
-
-
+for h = 1: size(theta);
+	summation = 0;
+	for i = 1:m;
+		otx = sum(theta' .* X(i,:));
+		hx = 1 / (1 + (e^-otx));
+		loopsum = (hx - y(i)) * X(i,h);
+		summation = summation + loopsum;
+	end;
+grad(h) = summation / m;
+end;
 
 % =============================================================
 
